@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sneha Dasgupta's developer portfolio, projects, skills, education and experience.">
+  <title>{% block title %}Sneha Dasgupta | Portfolio{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script defer src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="{% url 'home' %}"><span class="brand-mark">S</span><span>Sneha's Portfolio</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
+      <a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About Me</a>
+      <a href="{% url 'education' %}" class="{% if request.resolver_match.url_name == 'education' %}active{% endif %}">Education</a>
+      <a href="{% url 'skills' %}" class="{% if request.resolver_match.url_name == 'skills' %}active{% endif %}">Skills</a>
+      <a href="{% url 'projects' %}" class="{% if request.resolver_match.url_name == 'projects' or request.resolver_match.url_name == 'project_detail' %}active{% endif %}">Projects</a>
+      <a href="{% url 'experience' %}" class="{% if request.resolver_match.url_name == 'experience' %}active{% endif %}">Internships &amp; Certificates</a>
+      <a href="{% url 'contact' %}" class="nav-contact">Contact Me <span>↗</span></a>
+    </nav>
+  </header>
+  {% if messages %}<div class="message-stack">{% for message in messages %}<div class="flash {{ message.tags }}">{{ message }}</div>{% endfor %}</div>{% endif %}
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="{% url 'home' %}"><span class="brand-mark">S</span><span>Sneha's Portfolio</span></a>
+    <p>Designed with curiosity and built with code.</p>
+    <p class="footer-small">© <span id="year"></span> Sneha Dasgupta</p>
+  </footer>
+</body>
+</html>
