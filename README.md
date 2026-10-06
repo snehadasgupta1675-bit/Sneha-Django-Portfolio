@@ -1,119 +1,152 @@
-# Sneha Dasgupta — Django Portfolio
+# Sneha's Portfolio
 
-A responsive, blue-purple gradient portfolio website built with Django. It has seven main sections: Home, About Me, Education, Skills, Projects, Internships & Certificates, and Contact Me.
+A modern and responsive personal portfolio website built with **Django, HTML, CSS, and JavaScript**.
+
+This portfolio showcases my education, technical skills, projects, internships, certificates, and provides a contact form for connecting with me.
+
+## About the Project
+
+I am Sneha Dasgupta, a BCA student and aspiring full-stack developer from Kolkata.
+
+This portfolio was created to present my academic journey, technical skills, projects, internship experiences, and certifications in a professional and creative way.
+
+The website combines a modern blue-purple design with animations and a Django backend.
 
 ## Features
 
-- Seven separate section pages and individual project detail pages
-- Responsive navigation for desktop and mobile
-- Animated hero text, floating design elements, and scroll reveal effects
-- Django models and Admin management for education, skills, projects, internships, certificates, and contact messages
-- Working contact form that saves messages to the database
-- SQLite for local development and PostgreSQL via `DATABASE_URL` in deployment
-- WhiteNoise static file serving, Gunicorn, and Render blueprint configuration
-- Accessible labels, keyboard-friendly navigation, and reduced-motion support
+- Modern and responsive portfolio design
+- Home page with personal introduction
+- About Me section
+- Education details
+- Technical Skills section
+- Projects showcase
+- Project detail pages
+- Internships and Certificates section
+- Contact Me form
+- Django Admin panel
+- Database support using Django models
+- Animated and interactive user interface
+- Mobile-friendly navigation
+- Dynamic content management through Django Admin
 
-## Requirements
+## Portfolio Sections
 
-- Python 3.11–3.13 recommended
-- VS Code
-- Internet connection for installing Python packages
+### Home
+Introduction, profile photo, short professional description, and a quick overview of my work.
 
-## Run locally on Windows
+### About Me
+Information about my background, interests, learning journey, and career goal.
 
-1. Extract the ZIP file.
-2. Open the extracted `Sneha_Django_Portfolio` folder in VS Code.
-3. Open **Terminal → New Terminal**. Ensure the terminal is inside the folder containing `manage.py`.
-4. Create a virtual environment:
+### Education
+- Madhyamik — Loreto Day School Sealdah
+- Higher Secondary — Commerce — Loreto Day School Sealdah
+- Bachelor of Computer Applications (BCA) — George College
 
-   ```bat
-   py -m venv .venv
-   ```
+### Skills
 
-5. Activate it in Command Prompt:
+#### Web Development
+- HTML5
+- CSS3
+- JavaScript
+- Responsive Design
 
-   ```bat
-   .venv\Scripts\activate.bat
-   ```
+#### Programming & Frameworks
+- Python
+- Django
+- SQL
+- SQLAlchemy
+- AI/ML
+- NumPy
+- Pandas
+- NLP
 
-   If your terminal is PowerShell, use:
+### Projects
 
-   ```powershell
-   .\.venv\Scripts\Activate.ps1
-   ```
+#### Career Decode
+AI-based Resume Analysis and Career Domain Prediction System.
 
-6. Install dependencies:
+A Django-based project that analyzes resume information and predicts suitable career domains using AI/ML techniques.
 
-   ```bat
-   python -m pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
+**Type:** Internship Group Project
 
-7. Create the database tables:
+#### Cardio Care AI
+AI-based Heart Disease Risk Assessment System designed as an educational decision-support project.
 
-   ```bat
-   python manage.py makemigrations portfolio
-   python manage.py migrate
-   ```
+#### Study Mate AI
+Student Performance and Study Planner designed to help students understand their performance and plan their studies effectively.
 
-8. Create your admin account:
+#### Face Attend AI
+A facial recognition-based attendance management system developed using Django.
 
-   ```bat
-   python manage.py createsuperuser
-   ```
+#### CRM Management System
+A Django-based Customer Relationship Management system for managing customer records using CRUD operations.
 
-   Follow the prompts to create a username and password.
+### Internships
 
-9. Start the development server:
+- Full Stack Development Virtual Internship — Wokora — 2026
+- Cybersecurity Virtual Internship — Code Alpha — 2026
+- AI and ML with Python — Euphoria GenX — Offline
+- Web Development — Thiranex — 2026
 
-   ```bat
-   python manage.py runserver
-   ```
+### Certificates
 
-10. Open `http://127.0.0.1:8000/` in your browser. Admin is at `http://127.0.0.1:8000/admin/`.
+- Python with AI — SkillEcted
+- Full Stack Development — NoviTech
+- Communication Skills
+- HTML and CSS Bootcamp
+- Java and DSA Workshop — Phani Soft Tech
 
-## Add your content
+## Technologies Used
 
-Use Django Admin to add and edit:
-- **Education**: qualification, institution, period, details
-- **Skills**: skill name and category
-- **Projects**: title, slug, tagline, description, technologies, GitHub URL, live URL
-- **Internships and certificates**: kind, title, organization, period, description, credential URL
-- **Contact messages**: view messages submitted through the Contact Me page
+- Python
+- Django
+- HTML5
+- CSS3
+- JavaScript
+- SQLite
+- SQL
+- SQLAlchemy
+- Git
+- GitHub
 
-The site has starter content as a fallback for several sections. Add database records to make the site fully editable. Confirm every date, credential, link, and description before publishing.
+## Project Structure
 
-## Profile photo
+```text
+Sneha-Django-Portfolio/
+│
+├── manage.py
+├── requirements.txt
+├── README.md
+│
+├── portfolio/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── migrations/
+│
+├── templates/
+│   ├── base.html
+│   └── portfolio/
+│       ├── home.html
+│       ├── about.html
+│       ├── education.html
+│       ├── skills.html
+│       ├── projects.html
+│       ├── project_detail.html
+│       ├── experience.html
+│       └── contact.html
+│
+└── static/
+    ├── css/
+    │   └── style.css
+    │
+    ├── js/
+    │   └── main.js
 
-Your uploaded profile photo is included at `static/images/sneha-profile.jpg` and displayed in the Home page profile card. The Home page wording, layout, colors, buttons, and animations have otherwise been kept unchanged.
 
-## Contact form
-
-The contact form saves messages to the Django database and makes them visible to the site administrator at `/admin/`. It does not send email by default. To receive email notifications, configure Django email settings and environment variables before launch. Protect the admin account and use spam protection/rate limiting before public production use.
-
-## Deploy on Render
-
-This repository includes `render.yaml` and `build.sh` as a starting point for Render Blueprint deployment.
-
-1. Create a GitHub repository and upload the contents of this folder (not the ZIP itself).
-2. On Render, choose **New → Blueprint** and connect your GitHub repository.
-3. Review the resources and environment settings in `render.yaml`, then apply the Blueprint.
-4. Wait for the build and deployment to finish, then open the generated `.onrender.com` URL.
-5. Create an admin user for the hosted site. From Render's service Shell, run:
-
-   ```bash
-   python manage.py createsuperuser
-   ```
-
-6. Visit `/admin/` and add or update your portfolio records.
-7. Test every page and submit a test contact form.
-
-**Database note:** the sample `render.yaml` uses a small paid PostgreSQL database plan. Review current Render pricing and available plans before creating resources. Free web services may sleep and their local filesystem is ephemeral; do not rely on SQLite or local media files for persistent production data. Store uploaded media in a suitable object-storage service if you add media uploads later.
-
-## Before publishing
-
-- Add your own profile photo and professional email.
-- Add verified LinkedIn and GitHub profile URLs.
-- Verify education details, internship dates, certificates, and project URLs.
-- Keep secrets in environment variables, never in GitHub.
-- Consider a custom domain, email notifications, spam protection, and a privacy notice for contact form data.
+    │
+    └── images/
+        └── sneha-profile.jpg
