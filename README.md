@@ -49,7 +49,8 @@ Information about my background, interests, learning journey, and career goal.
 - CSS3
 - JavaScript
 - Responsive Design
-
+- Bootstrap
+  
 #### Programming & Frameworks
 - Python
 - Django
@@ -85,7 +86,7 @@ A Django-based Customer Relationship Management system for managing customer rec
 
 - Full Stack Development Virtual Internship — Wokora — 2026
 - Cybersecurity Virtual Internship — Code Alpha — 2026
-- AI and ML with Python — Euphoria GenX — Offline
+- AI and ML with Python — Euphoria GenX — Offline - 2026 
 - Web Development — Thiranex — 2026
 
 ### Certificates
