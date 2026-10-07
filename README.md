@@ -150,3 +150,8 @@ Sneha-Django-Portfolio/
     │
     └── images/
         └── sneha-profile.jpg
+
+Live Website - https://sneha-django-portfolio.onrender.com
+
+## Author ##
+By Sneha Dasgupta
